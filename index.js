@@ -1,9 +1,9 @@
 const express = require('express');
 const app = express();
-
+/* 
 //Using the morgan middleware
 const morgan = require('morgan');
-app.use(morgan('dev'));
+app.use(morgan('dev')); */
 
 //Using the body-parser middleware
 const bodyParser = require('body-parser');
