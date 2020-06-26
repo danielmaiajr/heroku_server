@@ -46,4 +46,4 @@ app.get('/', (req, res) => {
 
 //Server listening to connections
 
-app.listen(process.env.PORT || 5000, () => console.log(`Server running on Port ${PORT}`));
+app.listen(process.env.PORT || 5000, () => console.log(`Server running on Port 5000`));
