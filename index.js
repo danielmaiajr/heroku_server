@@ -1,11 +1,11 @@
 const express = require('express');
 const app = express();
-/* 
-//Using the morgan middleware
-const morgan = require('morgan');
-app.use(morgan('dev')); */
 
-/* //Using the body-parser middleware
+//Using the morgan middleware
+//const morgan = require('morgan');
+//app.use(morgan('dev'));
+
+//Using the body-parser middleware
 const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -37,7 +37,7 @@ app.use('/api', orderStatus);
 app.use('/api', cartItems);
 app.use('/api', products);
 app.use('/api', orders);
-app.use('/api', scheduling); */
+app.use('/api', scheduling);
 
 app.get('/', (req, res) => {
 	console.log('working');

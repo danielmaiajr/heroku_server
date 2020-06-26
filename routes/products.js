@@ -13,11 +13,11 @@ router.post('/products', (req, res) => {
 
 router.get('/products', (req, res) => {
 	const colunms = [ 'product_id', 'product_name', 'price', 'image_url' ];
-	const my_query = 'SELECT ?? FROM product LIMIT 20';
+	const my_query = 'SELECT product_id, product_name, price, image_url FROM product LIMIT 20';
 
-	req.connection.query(my_query, [ colunms ], (error, results, fields) => {
-		if (error) return res.status(500).json(error.sqlMessage);
-		return res.json(results);
+	req.connection.query(my_query, (error, results) => {
+		if (error) return res.status(500).json(error);
+		return res.json(results.rows);
 	});
 });
 
