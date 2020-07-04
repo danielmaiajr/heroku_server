@@ -1,17 +1,8 @@
 let config;
 
-if (process.env.HEROKU_POSTGRESQL_BRONZE_URL) {
+if (process.env.DATABASE_URL) {
 	// the application is executed on Heroku ... use the postgres database
-	config = {
-		dialect: 'postgres',
-		protocol: 'postgres',
-		port: match[4],
-		host: match[3],
-		define: {
-			timestamps: true,
-			underscored: true
-		}
-	};
+	config = process.env.DATABASE_URL;
 } else {
 	config = {
 		dialect: 'postgres',
