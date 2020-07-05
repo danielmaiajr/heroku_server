@@ -36,9 +36,9 @@ module.exports = {
 		let my_query;
 
 		if (page) {
-			my_query = `select product_id, product_name, price, image_url from product WHERE product_name ~* '^(?=.*${value})' LIMIT 25 OFFSET ${limit}`;
+			my_query = `select product_id, product_name, price, image_url from products WHERE product_name ~* '^(?=.*${value})' LIMIT 25 OFFSET ${limit}`;
 		} else {
-			my_query = `select product_id, product_name, price, image_url from product WHERE product_name ~* '^(?=.*${value})' LIMIT 5`;
+			my_query = `select product_id, product_name, price, image_url from products WHERE product_name ~* '^(?=.*${value})' LIMIT 5`;
 		}
 
 		const [ products ] = await connection.query(my_query);
@@ -54,9 +54,9 @@ module.exports = {
 		let my_query;
 
 		if (Object.keys(query).length === 0 && query.constructor === Object) {
-			my_query = 'SELECT product_id, product_name, price, image_url FROM product WHERE section = ? LIMIT 20';
+			my_query = 'SELECT product_id, product_name, price, image_url FROM products WHERE section = ? LIMIT 20';
 		} else {
-			my_query = `SELECT product_id, product_name, price, image_url FROM product WHERE section = ? LIMIT 25 OFFSET ${limit}`;
+			my_query = `SELECT product_id, product_name, price, image_url FROM products WHERE section = ? LIMIT 25 OFFSET ${limit}`;
 		}
 
 		const [ products ] = await connection.query(my_query, { replacements: [ section ] });
