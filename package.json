@@ -5,7 +5,7 @@
 	"main": "index.js",
 	"scripts": {
 		"start": "node index.js",
-		"test": "node test.js"
+		"test": "nodemon test.js"
 	},
 	"keywords": [],
 	"author": "",
@@ -18,10 +18,11 @@
 		"mysql": "^2.18.1",
 		"passport": "^0.4.1",
 		"passport-jwt": "^4.0.0",
-		"pg": "^8.2.1",
-		"sequelize": "^6.2.0"
+		"pg": "^8.4.2",
+		"sequelize": "^6.3.5"
 	},
 	"devDependencies": {
-		"sequelize-cli": "^6.0.0"
+		"morgan": "^1.10.0",
+		"sequelize-cli": "^6.2.0"
 	}
 }
